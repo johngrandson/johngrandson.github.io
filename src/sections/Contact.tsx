@@ -22,8 +22,15 @@ const Contact = () => {
 
     setLoading(true);
 
+    const templateParams = {
+      to_name: 'Joao Netto',
+      from_name: form.current['Name'].value,
+      message: form.current['message'].value,
+      reply_to: form.current['Email'].value,
+    };
+
     toast.promise(
-      emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY),
+      emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY),
       {
         loading: 'Sending email...',
         success: <b>Email sent successfully!</b>,
