@@ -11,6 +11,15 @@ const router = createBrowserRouter(
 
 function App() {
   useEffect(() => {
+    // Verifica se o script já existe
+    const existingScript = document.querySelector(
+      'script[src="https://aria-labs-production.up.railway.app/widget.js"]'
+    );
+
+    if (existingScript) {
+      return; // Script já existe, não adicionar outro
+    }
+
     const script = document.createElement('script');
     script.src = 'https://aria-labs-production.up.railway.app/widget.js';
     script.setAttribute('data-widget-id', 'prod-test-widget');
