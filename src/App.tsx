@@ -1,5 +1,5 @@
 import "./App.css";
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } from 'react-router-dom';
 import Home from "./pages/Home";
 
@@ -10,15 +10,26 @@ const router = createBrowserRouter(
 )
 
 function App() {
+  const scriptLoadedRef = useRef(false);
+
   useEffect(() => {
-    // Verifica se o script já existe
+    // Previne execução múltipla do useEffect (StrictMode)
+    if (scriptLoadedRef.current) {
+      return;
+    }
+
+    // Verifica se o script já existe no DOM
     const existingScript = document.querySelector(
       'script[src="https://aria-labs-production.up.railway.app/widget.js"]'
     );
 
     if (existingScript) {
-      return; // Script já existe, não adicionar outro
+      scriptLoadedRef.current = true;
+      return;
     }
+
+    // Marca como carregado antes de adicionar
+    scriptLoadedRef.current = true;
 
     const script = document.createElement('script');
     script.src = 'https://aria-labs-production.up.railway.app/widget.js';
@@ -29,9 +40,8 @@ function App() {
     document.body.appendChild(script);
 
     return () => {
-      if (document.body.contains(script)) {
-        document.body.removeChild(script);
-      }
+      // Não remover o script no cleanup para evitar re-injeção
+      // scriptLoadedRef permanece true para prevenir recarregamento
     };
   }, []);
 
