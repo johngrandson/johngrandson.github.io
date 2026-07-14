@@ -13,7 +13,6 @@ import Blockquote from "../sections/Blockquote";
 import Resume from '../sections/Resume';
 // import Blog from '../sections/Blog';
 import Contact from '../sections/Contact';
-import Footer from '../sections/Footer';
 
 import { GlobalStyles } from '../styles/base';
 
@@ -54,7 +53,6 @@ function Home() {
         </section> */}
         <section id="contact" className="pb-0">
           <Contact />
-          <Footer />
         </section>
       </div>
       <ScrollToTopBtn />
