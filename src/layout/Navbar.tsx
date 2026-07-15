@@ -50,11 +50,11 @@ const Navbar = function () {
                   My Resume
                 </Link>
               </li>
-              {/* <li className="nav-item">
+              <li className="nav-item">
                 <Link className="nav-link transition font-20" activeClass="active" spy to="blog">
                   Blog
                 </Link>
-              </li> */}
+              </li>
               <li className="nav-item">
                 <Link className="nav-link transition font-20" activeClass="active" spy to="contact">
                   Contact Me
@@ -85,11 +85,11 @@ const Navbar = function () {
                     My resume
                   </Link>
                 </li>
-                {/* <li className="nav-item">
+                <li className="nav-item">
                   <Link className="nav-link" activeClass="active" spy to="blog" onClick={() => setMenu(!showMenu)}>
                     Blog
                   </Link>
-                </li> */}
+                </li>
                 <li className="nav-item">
                   <Link className="nav-link" activeClass="active" spy to="contact" onClick={() => setMenu(!showMenu)}>
                     Contact Me
@@ -98,7 +98,7 @@ const Navbar = function () {
               </ul>
             </div>
           }
-          <button className="burgermenu" type="button" onClick={() => setMenu(!showMenu)}>
+          <button className="burgermenu" type="button" aria-label={showMenu ? "Fechar menu" : "Abrir menu"} aria-expanded={showMenu} onClick={() => setMenu(!showMenu)}>
             <i className="fa fa-bars" aria-hidden="true"></i>
           </button>
         </div>
