@@ -11,7 +11,7 @@ import Hero from '../sections/Hero';
 import About from '../sections/About';
 import Blockquote from "../sections/Blockquote";
 import Resume from '../sections/Resume';
-// import Blog from '../sections/Blog';
+import Blog from '../sections/Blog';
 import Contact from '../sections/Contact';
 
 import { GlobalStyles } from '../styles/base';
@@ -48,9 +48,9 @@ function Home() {
         <section id="resume" className="pb-0">
           <Resume />
         </section>
-        {/* <section id="blog" className="pb-0">
+        <section id="blog" className="pb-0">
           <Blog />
-        </section> */}
+        </section>
         <section id="contact" className="pb-0">
           <Contact />
         </section>
