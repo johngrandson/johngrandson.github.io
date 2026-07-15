@@ -1,11 +1,14 @@
 import "./App.css";
 import { useEffect, useRef } from 'react';
 import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } from 'react-router-dom';
+import Layout from "./layout/Layout";
 import Home from "./pages/Home";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<Home />} />
+    <Route path="/" element={<Layout />}>
+      <Route index element={<Home />} />
+    </Route>
   )
 )
 
