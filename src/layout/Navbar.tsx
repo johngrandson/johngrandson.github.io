@@ -98,7 +98,7 @@ const Navbar = function () {
               </ul>
             </div>
           }
-          <button className="burgermenu" type="button" onClick={() => setMenu(!showMenu)}>
+          <button className="burgermenu" type="button" aria-label={showMenu ? "Fechar menu" : "Abrir menu"} aria-expanded={showMenu} onClick={() => setMenu(!showMenu)}>
             <i className="fa fa-bars" aria-hidden="true"></i>
           </button>
         </div>
