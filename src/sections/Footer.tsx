@@ -16,6 +16,16 @@ const Footer = () => {
               <a href="https://soundcloud.com/theghostmachine" target="_blank" rel="noreferrer"><i className="fa fa-soundcloud"></i></a>
             </div>
           </div>
+          <div className="col-12 text-center mt30">
+            <a
+              className="btn-main"
+              href="https://www.linkedin.com/in/joaonettopb"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Comprar Parcelado
+            </a>
+          </div>
         </div>
       </div>
     </footer>
